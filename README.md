@@ -1,4 +1,6 @@
-# PID_ML_in_O2
+# PID ML in O2
+
+Porting Python PID ML codes to C++ O2.
 
 ## Python API - in `python/`
 
