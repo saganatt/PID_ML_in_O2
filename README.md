@@ -12,3 +12,14 @@ Porting Python PID ML codes to C++ O2.
 `source load.sh --recreate` creates a new, fresh environment.
 
 ## C++ API - in progress...
+
+### Installing ONNX Runtime on Linux
+
+```
+wget https://github.com/microsoft/onnxruntime/releases/download/v1.4.0/onnxruntime-linux-x64-1.4.0.tgz
+tar -xvf onnxruntime-linux-x64-1.4.0.tgz
+cd onnxruntime-linux-x64-1.4.0/
+sudo cp lib/* /usr/local/lib/
+sudo ln -sf /usr/local/lib/libonnxruntime.so.1.4.0 /usr/local/lib/libonnxruntime.so
+sudo cp include/* /usr/local/include/
+```
