@@ -1,8 +1,17 @@
+# Notebook cache
 python/.ipynb_checkpoints
 
+# CMake files
 CMakeFiles
 CMakeCache.txt
 Makefile
 cmake_install.cmake
 
+# binary files
 pid-in-cpp
+o2-analysistutorial-pid-with-onnx
+
+# data and output
+*.root
+*.json
+*.txt

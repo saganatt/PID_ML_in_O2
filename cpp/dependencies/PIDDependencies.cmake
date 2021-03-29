@@ -17,6 +17,6 @@ include_guard()
 # Order is not completely irrelevant.
 
 # Needed for find_package to work properly
-set(onnxruntime_DIR ${CMAKE_CURRENT_LIST_DIR})
-include(${onnxruntime_DIR}/onnxruntimeVersion.cmake)
-find_package(onnxruntime REQUIRED) # CONFIG)
+set(ONNXRuntime\:\:ONNXRuntime_DIR ${CMAKE_CURRENT_LIST_DIR})
+include(${ONNXRuntime\:\:ONNXRuntime_DIR}/ONNXRuntimeVersion.cmake)
+find_package(ONNXRuntime::ONNXRuntime REQUIRED)

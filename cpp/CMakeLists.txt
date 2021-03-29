@@ -17,4 +17,4 @@ add_executable(pid-in-cpp
 
 # include_directories(_)
 
-target_link_libraries(pid-in-cpp onnxruntime)
+target_link_libraries(pid-in-cpp ONNXRuntime::ONNXRuntime)
