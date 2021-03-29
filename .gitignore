@@ -1,1 +1,8 @@
 python/.ipynb_checkpoints
+
+CMakeFiles
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+pid-in-cpp
