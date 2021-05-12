@@ -36,6 +36,10 @@ ninja stage/bin/o2-analysistutorial-pid-with-onnx
 cp stage/bin/o2-analysistutorial-pid-with-onnx <your_analysis_dir>
 ```
 3. Build ONNXRuntime: `aliBuild build onnxruntime`
+
+   Known issues:
+   - `Could not find PythonLibs` - install `python3-dev` (Ubuntu) or `python3-devel` (CentOS)
+
 4. Enter both O2 and ONNXRuntime: `alienv enter O2/latest onnxruntime/latest`
 5. Run: `./o2-analysistutorial-pid-with-onnx --aod-file <some_input_AOD> -b`
 
