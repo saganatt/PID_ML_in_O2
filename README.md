@@ -28,20 +28,19 @@ Based on [example](https://github.com/microsoft/onnxruntime/blob/master/samples/
 Available on repo, [branch](https://github.com/saganatt/AliceO2/tree/pid-in-o2), [file](https://github.com/saganatt/AliceO2/blob/pid-in-o2/Analysis/Tutorials/src/pidWithONNX.cxx)
 
 To launch this:
-1. If you don't have O2 build, you need to build it with aliBuild: `aliBuild build O2 --defaults o2`.
+1. If you don't have O2 build, you need to build it with aliBuild: `aliBuild build O2 --defaults o2`. ONNXRuntime should be automatically build by aliBuild.
 2. Otherwise you can make it faster:
 ```
 cd alice/sw/BUILD/O2-latest/O2/
+cmake .
 ninja stage/bin/o2-analysistutorial-pid-with-onnx
 cp stage/bin/o2-analysistutorial-pid-with-onnx <your_analysis_dir>
 ```
-3. Build ONNXRuntime: `aliBuild build onnxruntime`
-
    Known issues:
    - `Could not find PythonLibs` - install `python3-dev` (Ubuntu) or `python3-devel` (CentOS)
 
-4. Enter both O2 and ONNXRuntime: `alienv enter O2/latest onnxruntime/latest`
-5. Run: `./o2-analysistutorial-pid-with-onnx --aod-file <some_input_AOD> -b`
+5. Enter O2: `alienv enter O2/latest`
+6. Run the task: `./o2-analysistutorial-pid-with-onnx --aod-file <some_input_AOD> -b`
 
 The model outputs are saved to the `results` histogram in `AnalysisResults.root`.
 
