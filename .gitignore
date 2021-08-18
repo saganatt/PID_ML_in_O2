@@ -1,6 +1,10 @@
 # Notebook cache
 python/.ipynb_checkpoints
 
+# Python cache
+python/PID.egg-info
+python/__pycache__
+
 # CMake files
 CMakeFiles
 CMakeCache.txt
@@ -12,6 +16,5 @@ pid-in-cpp
 o2-analysistutorial-pid-with-onnx
 
 # data and output
-*.root
 *.json
 *.txt
