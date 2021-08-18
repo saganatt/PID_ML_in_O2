@@ -18,3 +18,4 @@ o2-analysistutorial-pid-with-onnx
 # data and output
 *.json
 *.txt
+*.csv
