@@ -24,23 +24,30 @@ Based on [example](https://github.com/microsoft/onnxruntime/blob/master/samples/
 2. Build with make.
 3. Run: `./pid-in-o2 <path_to_model_file>`
 
-### O2 Analysis Task
-Available on repo, [branch](https://github.com/saganatt/AliceO2/tree/pid-in-o2), [file](https://github.com/saganatt/AliceO2/blob/pid-in-o2/Analysis/Tutorials/src/pidWithONNX.cxx)
+### O2Physics Analysis Task
+ONNXRuntime is integrated with O2Physics - you can simply add this as a library dependency to the CMakeLists.txt for your task, as [here](https://github.com/saganatt/O2Physics/blob/pid-with-onnx/Tasks/PIDML/CMakeLists.txt).
+
+An example of a task using ONNX model is available in O2Physics repo: [branch](https://github.com/saganatt/O2Physics/tree/pid-with-onnx), [file](https://github.com/saganatt/O2Physics/blob/pid-with-onnx/Tasks/PIDML/pidWithONNX.cxx).
 
 To launch this:
-1. Take alidist from [here](https://github.com/saganatt/alidist/tree/onnxruntime) (it is not merged yet). This causes ONNXRuntime to be build together with O2.
-2. If you don't have O2 build, you need to build it with aliBuild: `aliBuild build O2 --defaults o2`.<br>
+1. Download and checkout to the proper branch:
+```
+git add remote saganatt https://github.com/saganatt/O2Physics.git
+git fetch saganatt
+git checkout saganatt/pid-with-onnx
+```
+3. If you don't have O2Physics built, you need to build it with aliBuild: `aliBuild build O2Physics --defaults o2`.<br>
    Otherwise, you can make it faster:
 ```
-cd alice/sw/BUILD/O2-latest/O2/
+cd alice/sw/BUILD/O2Physics-latest/O2Physics/
 cmake .
-ninja stage/bin/o2-analysistutorial-pid-with-onnx
+ninja install stage/bin/o2physics-analysistutorial-pid-with-onnx
 ```
    Known issues:
    - `Could not find PythonLibs` --> install `python3-dev` (Ubuntu) or `python3-devel` (CentOS)
 
-4. Enter O2: `alienv enter O2/latest`
-5. Run the task: `o2-analysistutorial-pid-with-onnx --aod-file <some_input_AOD> -b`
+2. Enter O2: `alienv enter O2Physics/latest` or `alienv load O2Physics/latest`
+3. Run the task: `o2physics-analysistutorial-pid-with-onnx --aod-file <some_input_AOD> -b`
 
 The model outputs are saved to the `results` histogram in `AnalysisResults.root`.
 
