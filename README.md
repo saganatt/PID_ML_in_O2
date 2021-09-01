@@ -36,7 +36,8 @@ git add remote saganatt https://github.com/saganatt/O2Physics.git
 git fetch saganatt
 git checkout saganatt/pid-with-onnx
 ```
-2. If you don't have O2Physics built, you need to build it with aliBuild: `aliBuild build O2Physics --defaults o2`.<br>
+2. Adjust the path to the ONNX model in the analysis task (line 23)
+3. If you don't have O2Physics built, you need to build it with aliBuild: `aliBuild build O2Physics --defaults o2`.<br>
    Otherwise, you can make it faster:
 ```
 cd alice/sw/BUILD/O2Physics-latest/O2Physics/
@@ -46,8 +47,8 @@ ninja install stage/bin/o2physics-analysistutorial-pid-with-onnx
    Known issues:
    - `Could not find PythonLibs` --> install `python3-dev` (Ubuntu) or `python3-devel` (CentOS)
 
-3. Enter O2: `alienv enter O2Physics/latest` or `alienv load O2Physics/latest`
-4. Run the task: `o2physics-analysistutorial-pid-with-onnx --aod-file <some_input_AOD> -b`
+4. Enter O2: `alienv enter O2Physics/latest` or `alienv load O2Physics/latest`
+5. Run the task: `o2physics-analysistutorial-pid-with-onnx --aod-file <some_input_AOD> -b`
 
 The model outputs are saved to the `results` histogram in `AnalysisResults.root`.
 
