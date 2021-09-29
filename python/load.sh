@@ -34,7 +34,7 @@ create-virtualenv ()
             return 1;
         fi;
     fi;
-    virtualenv -p /usr/bin/python3.6 $VIRTUALENV_PATH
+    virtualenv -p /usr/bin/python3.8 $VIRTUALENV_PATH
 }
 
 activate-virtualenv ()
