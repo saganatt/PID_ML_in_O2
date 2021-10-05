@@ -27,7 +27,7 @@ Based on [example](https://github.com/microsoft/onnxruntime/blob/master/samples/
 ### O2Physics Analysis Task
 ONNXRuntime is integrated with O2Physics - you can simply add this as a library dependency to the CMakeLists.txt for your task, as [here](https://github.com/saganatt/O2Physics/blob/pid-with-onnx/Tasks/PIDML/CMakeLists.txt).
 
-An example of a task using ONNX model is available in O2Physics repo: [branch](https://github.com/saganatt/O2Physics/tree/pid-with-onnx), [file](https://github.com/saganatt/O2Physics/blob/pid-with-onnx/Tasks/PIDML/pidWithONNX.cxx).
+An example of a task using ONNX model is available in O2Physics repo: [branch](https://github.com/saganatt/O2Physics/tree/pid-with-onnx), [file](https://github.com/saganatt/O2Physics/blob/pid-with-onnx/PWGPP/Tasks/pidWithONNX.cxx).
 
 To launch this:
 1. Download and checkout to the proper branch:
@@ -42,13 +42,13 @@ git checkout saganatt/pid-with-onnx
 ```
 cd alice/sw/BUILD/O2Physics-latest/O2Physics/
 cmake .
-ninja install stage/bin/o2physics-analysistutorial-pid-with-onnx
+ninja install stage/bin/o2-analysis-pp-pid-with-onnx
 ```
    Known issues:
    - `Could not find PythonLibs` --> install `python3-dev` (Ubuntu) or `python3-devel` (CentOS)
 
 4. Enter O2: `alienv enter O2Physics/latest` or `alienv load O2Physics/latest`
-5. Run the task: `o2physics-analysistutorial-pid-with-onnx --aod-file <some_input_AOD> -b`
+5. Run the task: `o2-analysis-pp-pid-with-onnx --aod-file <some_input_AOD> -b`
 
 The model outputs are saved to the `results` histogram in `AnalysisResults.root`.
 
