@@ -6,7 +6,7 @@ train=208
 dataset=LHC18g4
 run=285064
 
-for number in 001 002 003 ; do
+for number in {001..010}; do
   # Real tracks
   o2-analysis-pp-pid-ml-producer --aod-file ${IN_DIR}/${dataset}/${run}/AO2D_${number}.root -b \
     --aod-writer-keep AOD/PIDTRACKSREAL/0:::${OUT_DIR}/train_${train}_dataset_${dataset}_run_${run}_${number}_pidtracksreal_globaltracks |
