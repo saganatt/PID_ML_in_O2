@@ -17,3 +17,12 @@ for number in {001..010}; do
     --aod-writer-keep AOD/PIDTRACKSMC/0:::${OUT_DIR}/train_${train}_dataset_${dataset}_run_${run}_${number}_pidtracksmc_globaltracks |
     o2-analysis-trackextension -b | o2-analysis-trackselection -b | o2-analysis-pid-tof -b
 done
+
+train=204
+dataset=LHC18b
+for number in {001..010}; do
+  # Real tracks
+  o2-analysis-pp-pid-ml-producer --aod-file ${IN_DIR}/${dataset}/${run}/AO2D_${number}.root -b \
+    --aod-writer-keep AOD/PIDTRACKSREAL/0:::${OUT_DIR}/train_${train}_dataset_${dataset}_run_${run}_${number}_pidtracksreal_globaltracks |
+    o2-analysis-trackextension -b | o2-analysis-trackselection -b | o2-analysis-pid-tof -b
+done
