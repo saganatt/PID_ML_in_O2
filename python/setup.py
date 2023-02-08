@@ -54,7 +54,8 @@ setup(
   # requirements files see:
   # https://packaging.python.org/en/latest/requirements.html
   install_requires=[ "notebook", "pylint", "torch", "torchvision", "numpy",
-                     "onnx", "onnxruntime", "uproot3", "pandas", "zstandard"],
+                     "onnx", "onnxruntime", "uproot3", "pandas", "zstandard",
+                     "pydot"],
 
   python_requires='>=3.6',
 
