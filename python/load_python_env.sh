@@ -37,7 +37,7 @@ create-virtualenv ()
             return 1;
         fi;
     fi;
-    virtualenv -p /usr/bin/python3 $VIRTUALENV_PATH
+    /usr/bin/python3 -m venv $VIRTUALENV_PATH
 }
 
 activate-virtualenv ()
@@ -73,7 +73,7 @@ deactivate-virtualenv()
 #############
 # Main part #
 #############
-option=$1
+option=$2
 
 # Must be sourced
 if [[ $_ != $0 ]]
