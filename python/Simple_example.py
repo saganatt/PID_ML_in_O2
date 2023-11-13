@@ -87,11 +87,11 @@ torch.onnx.export(model,                                          # model being 
                   export_params=True,                             # store the trained parameter weights inside the model file
                   opset_version=14,                               # the ONNX version to export the model to: https://onnxruntime.ai/docs/reference/compatibility.html
                   do_constant_folding=True,                       # whether to execute constant folding for optimization
-                  input_names=['a column', 'another column', 'pt', 'eta', 'phi'], # the model's input names
+                  input_names=['fX', 'fY', 'fPt', 'fEta', 'fPhi'], # the model's input names
                   output_names=['output'],                        # the model's output names
-                  dynamic_axes={'a column': {0: 'batch_size'},    # variable length axes
-                                'another column': {0: 'batch_size'},
-                                'pt': {0: 'batch_size'},
-                                'eta': {0: 'batch_size'},
-                                'phi': {0: 'batch_size'},
+                  dynamic_axes={'fX': {0: 'batch_size'},    # variable length axes
+                                'fY': {0: 'batch_size'},
+                                'fPt': {0: 'batch_size'},
+                                'fEta': {0: 'batch_size'},
+                                'fPhi': {0: 'batch_size'},
                                 'output': {0: 'batch_size'}})
